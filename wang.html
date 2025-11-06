@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科创达人 · 王同学</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { height: 100%; }
+        body {
+            background-image: url("img/page3.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #111827;
+        }
+        .page { min-height: 100dvh; background: rgba(255,255,255,0.5); backdrop-filter: blur(4px); }
+        .container { width: min(92vw, 1100px); margin: 0 auto; padding: 28px 0 48px; }
+        .title { text-align: center; color: #0f172a; }
+        .title h1 { font-size: clamp(22px, 3.2vw, 32px); font-weight: 800; }
+        .subtitle { margin-top: 4px; color: #374151; font-size: 14px; text-align: center; }
+        .section { margin-top: 22px; }
+        .section h2 { font-size: clamp(18px, 2.2vw, 24px); margin-bottom: 10px; color: #0f172a; }
+        .intro-card { padding: 14px 16px; background: rgba(255,255,255,0.86); border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 8px 24px rgba(0,0,0,0.12); border-left: 4px solid #16423c; }
+        .intro-card p { line-height: 1.85; color: #1f2937; text-indent: 2em; }
+
+        .video-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+        @media (min-width: 900px) { .video-grid { grid-template-columns: 1fr 1fr; } }
+        .video-embed { background: rgba(0,0,0,0.15); border: 1px solid rgba(0,0,0,0.2); box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
+        .video-embed video { width: 100%; height: auto; display: block; }
+        .video-caption { font-size: 13px; color: #374151; padding: 6px 8px; background: rgba(255,255,255,0.85); }
+
+        .keywords { margin-top: 12px; }
+        .keywords span { display: inline-block; margin: 6px 8px 0 0; padding: 4px 10px; border: 1px solid rgba(0,0,0,0.1); background: #fff; border-radius: 9999px; font-size: 13px; color: #16423c; }
+
+        .feedback { margin-top: 22px; }
+        .feedback h2 { font-size: clamp(18px, 2.2vw, 22px); color: #0f172a; margin-bottom: 10px; }
+        .feedback-item { margin-top: 10px; padding: 12px 14px; background: rgba(255,255,255,0.9); border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 6px 18px rgba(0,0,0,0.08); border-left: 4px solid #16423c; color: #1f2937; line-height: 1.8; }
+
+        .back-btn { position: fixed; bottom: 16px; right: 16px; padding: 8px 14px; background: rgba(255,255,255,0.9); border: 1px solid rgba(0,0,0,0.2); color: #16423c; text-decoration: none; cursor: pointer; transition: all 0.2s ease; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+        .back-btn:hover { background: #16423c; color: #ffffff; }
+    </style>
+</head>
+<body>
+    <a class="back-btn" href="episode1.html">返回</a>
+    <main class="page">
+        <div class="container">
+            <header class="title">
+                <h1>科创达人 · 王同学</h1>
+                <div class="subtitle">第一幕：青年成长</div>
+            </header>
+
+            <section class="section">
+                <div class="intro-card">
+                    <p>我们都知道，中国式现代化强调科技自立自强。对王同学与其团队而言，这意味着不满足于“会用”国外技术，而是勇闯算法“无人区”。在攻关机器人路径规划的漫长试错中，他们学会在不同思路的碰撞中寻找突破，把一次次具体的技术难题，变成通往智能物流与智慧城市的一块基石。</p>
+                    <p>他总结出青年科研的“三心”：对未知的好奇心，敢闯无人区；面对挫折的耐心，在失败中沉淀；服务国家创新的责任心，把个人梦想融入时代使命——走得稳，也走得远。</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>视频回放</h2>
+                <div class="video-grid">
+                    <div class="video-embed">
+                        <video src="vedio/a1.mp4" controls preload="metadata"></video>
+                        <div class="video-caption">王同学 · 采访视频片段</div>
+                    </div>
+                    <div class="video-embed">
+                        <video src="vedio/b1.mp4" controls preload="metadata"></video>
+                        <div class="video-caption">王同学 · AI 生成视频（嘉宾介绍）</div>
+                    </div>
+                </div>
+                <div class="keywords">
+                    <span>自立自强</span><span>算法无人区</span><span>团队协作</span><span>路径规划</span><span>责任与担当</span>
+                </div>
+            </section>
+
+            <section class="section feedback">
+                <h2>观众有感</h2>
+                <div class="feedback-item">“把一次次小小的技术问题，连成中国式现代化的大图景——这就是青年科研的浪漫。”</div>
+                <div class="feedback-item">“敢闯‘无人区’的不只是勇气，还有在失败中复盘、在分歧中协作的专业精神。”</div>
+                <div class="feedback-item">“三心合一：好奇心、耐心、责任心。既是科研方法论，也是青年价值观。”</div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
+
+

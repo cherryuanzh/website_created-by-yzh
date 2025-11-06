@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>往期精彩</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { height: 100%; }
+        body {
+            background-image: url("img/page2.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* top button */
+        .top-cta {
+            position: absolute;
+            top: 6%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: inline-flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 16px 22px;
+            border-radius: 0;
+            background: rgba(255, 255, 255, 0.85);
+            color: #1f2937;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(6px);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            max-width: min(92vw, 1100px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+            position: absolute;
+        }
+
+        .top-cta:hover {
+            background: rgba(255, 255, 255, 0.96);
+            border-color: rgba(0,0,0,0.18);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.24);
+            transform: translateX(-50%) translateY(-2px);
+        }
+
+        .cta-title {
+            font-size: clamp(16px, 2.2vw, 22px);
+            font-weight: 700;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .cta-sub {
+            font-size: clamp(12px, 1.5vw, 14px);
+            font-weight: 400;
+            line-height: 1.6;
+            color: rgba(31, 41, 55, 0.85);
+            white-space: normal;
+            text-indent: 2em;
+        }
+
+        .cta-media {
+            margin-top: 6px;
+            width: 100%;
+            border: 1px solid rgba(0,0,0,0.08);
+            max-height: min(60vh, 700px);
+            object-fit: contain;
+            background: rgba(0,0,0,0.02);
+        }
+
+        /* hover hint */
+        .cta-hint {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            padding: 6px 10px;
+            background: #16423c;
+            color: #ffffff;
+            border: 1px solid rgba(255,255,255,0.8);
+            font-size: 12px;
+            letter-spacing: 1px;
+            opacity: 0;
+            transform: translateY(4px);
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .top-cta:hover .cta-hint {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* next teaser */
+        .next-wrap {
+            position: absolute;
+            top: calc(6% + 16px + 10px + 22px + min(60vh, 700px) + 40px);
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(92vw, 1100px);
+            color: rgba(255,255,255,0.92);
+            text-align: center;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.45);
+        }
+
+        .next-title {
+            font-size: clamp(16px, 2vw, 20px);
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        /* Slightly push the final title further down */
+        .next-wrap .next-title:last-child {
+            margin-top: 16px;
+        }
+
+        .next-sub {
+            font-size: clamp(12px, 1.4vw, 14px);
+            line-height: 1.8;
+            opacity: 0.95;
+            max-width: min(90%, 100ch);
+            margin: 0 auto;
+        }
+    </style>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="icon" href="data:,">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#000000">
+    <meta name="referrer" content="no-referrer">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="往期精彩">
+</head>
+<body>
+    <a class="top-cta" href="episode1.html" role="button">
+        <span class="cta-hint">点击查看</span>
+        <span class="cta-title">第一期：深悟习思想，解构中国梦——青年人的认知、认同与践行</span>
+        <span class="cta-sub">本期访谈聚焦“深悟习思想，解构中国梦”，通过三位不同领域优秀青年的亲身经历，具象化展现了新时代思想对青年成长的指导意义。习近平新时代中国特色社会主义思想并非遥不可及的理论，它体现在青年人的具体实践和奋斗汗水里，指引着新时代青年将个人梦想主动融入国家使命，成功实现一场青春与时代的“双向奔赴”。</span>
+        <img class="cta-media" src="img/p1.png" alt="第一期配图">
+    </a>
+
+    <div class="next-wrap">
+        <div class="next-title">未完待续 · 下期预告</div>
+        <div class="next-sub">第二期：踔厉奋发新征程——青年与中国式现代化。我们将走近基层治理、科技创新与乡村振兴一线，探讨青年如何在习近平新时代中国特色社会主义思想指引下，将专业所学与时代主题同频共振，以实际行动书写属于“青春会客厅”的崭新篇章。</div>
+        <div class="next-title">更多精彩 · 敬请期待</div>
+    </div>
+</body>
+</html>
+

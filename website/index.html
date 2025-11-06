@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青春会客厅</title>
+    <!-- Import Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Import original CSS logic */
+        * {
+            padding: 0;
+            margin: 0;
+            border: none;
+            outline: none;
+            font-family: "Inter", sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url("img/page1.png");
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            height: 100vh; /* Ensure it takes up the full viewport height */
+            width: 100vw;
+            position: relative;
+        }
+
+            /* Bottom gradient overlay (Maintains original visual effect) */
+            body::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                /* Adjust gradient color to match the fresh tones of the background image */
+                background: linear-gradient(transparent 70%, rgba(0, 0, 0, 0.3), rgb(0, 0, 0));
+                z-index: 0; /* Ensure the gradient is below the text and above the main background */
+            }
+
+        /* Background-images: Ensure layered images are at the bottom and can overlap */
+        .content {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+
+            .content img {
+                position: absolute;
+                left: 50%;
+                /* Fixed: Use percentage for animation compatibility */
+                bottom: -12%;
+                transform: translateX(-50%);
+                max-width: 120%;
+                height: auto;
+                object-fit: contain;
+                z-index: 1; /* Ensure these layered images are above the body gradient but below the text */
+            }
+
+        /* Fallback image style: Used when local files cannot be accessed. */
+        .img-placeholder {
+            /* Fallback to transparent div for images when actual files aren't loading, preserving layout */
+            background-color: transparent;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Main title area: Center positioned */
+        .title-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2; /* Ensure the title is above all layers */
+            text-align: center;
+            width: 90%; /* Limit container width for responsiveness */
+            max-width: 1200px;
+        }
+
+        .title-main {
+            font-size: clamp(3rem, 15vw, 12rem); /* Responsive font size */
+            font-weight: 800;
+            letter-spacing: 10px;
+            color: #1a759f;
+            text-transform: uppercase;
+            /* FIXED: Adjusted margin to prevent vertical clipping */
+            margin: -0.05em 0;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            line-height: 1; /* FIXED: Ensure lines don't overlap or clip excessively */
+        }
+
+        .title-sub {
+            font-size: clamp(1rem, 3vw, 1.8rem);
+            font-weight: 400;
+            letter-spacing: 8px;
+            color: white;
+            padding: 5px 20px;
+            margin-top: 20px; /* Increased margin for better separation */
+            background-color: #f7b2bd;
+            display: inline-block;
+            border-radius: 5px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            white-space: nowrap; /* Prevent line break on small screens */
+        }
+
+        .title-extra {
+            font-size: clamp(0.6rem, 1.5vw, 1rem);
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 30px; /* Adjusted margin */
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+            white-space: nowrap; /* Prevent line break */
+        }
+
+        /* Enter button */
+        .enter-btn {
+            position: absolute;
+            left: 50%;
+            bottom: 13%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            padding: 0 28px;
+            border-radius: 9999px;
+            border: 1px solid rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(22, 66, 60, 0.25);
+            backdrop-filter: blur(4px);
+            font-size: 16px;
+            letter-spacing: 3px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .enter-btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+            color: #353535;
+        }
+
+        /* --- Animations (Replicate original dynamic effects) --- */
+
+        /* Layered image animation: Rise from the bottom, creating a parallax effect */
+        @keyframes bottomIn {
+            from {
+                transform: translate(-50%, 200px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translate(-50%, 0);
+                opacity: 1;
+            }
+        }
+
+        .back-1 {
+            animation: bottomIn 1.5s ease-out forwards;
+        }
+
+        .back-2 {
+            animation: bottomIn 1.3s ease-out forwards;
+        }
+
+        .back-3 {
+            animation: bottomIn 1.4s ease-out forwards;
+        }
+
+        /* Title text animation: Rise from the bottom and fade in */
+        @keyframes bottomInText {
+            from {
+                transform: translate(-50%, 500px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translate(-50%, -50%);
+                opacity: 1;
+            }
+        }
+
+        .title-container {
+            opacity: 0; /* Initially hidden */
+            animation: bottomInText 1.2s ease-out forwards;
+            animation-delay: 0.2s;
+        }
+
+        /* Background animation: Background image slowly moves upwards */
+        @keyframes backgroundImage {
+            from {
+                background-position: top;
+            }
+
+            to {
+                background-position: 50% 10%;
+            }
+        }
+
+        body {
+            animation: backgroundImage 1.8s ease-out forwards;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .content img {
+                bottom: -5%; /* Slightly lift up on mobile */
+                max-width: 180%; /* Allow larger image coverage on smaller screens */
+            }
+
+            .title-main {
+                letter-spacing: 3px;
+            }
+
+            .title-sub {
+                letter-spacing: 3px;
+            }
+        }
+    </style>
+    <script>
+        // Fallback for local images
+        function usePlaceholder(img) {
+            img.onerror = null; // Prevent infinite loop
+            const width = img.naturalWidth || 500;
+            const height = img.naturalHeight || 300;
+
+            // Generate a simple colored placeholder to indicate the layer position
+            let color = '#d4edff';
+            let text = 'Layer 1';
+            if (img.className.includes('back-2')) {
+                color = '#f0cff4';
+                text = 'Layer 2';
+            }
+
+            img.src = `https://placehold.co/${width}x${height}/${color.slice(1)}/000?text=${text}`;
+            img.classList.add('img-placeholder');
+            img.style.opacity = '0.5'; // Make it semi-transparent for visibility
+        }
+    </script>
+</head>
+<body>
+
+    <div class="content">
+        <!-- Main title area - Center displayed, includes text -->
+        <div class="title-container">
+            <div class="title-main">青春会客厅</div>
+            <div class="title-sub">不负青春好时光</div>
+        </div>
+
+        <a href="page2.html" class="enter-btn">点击此处回顾往期精彩内容</a>
+    </div>
+
+</body>
+</html>
